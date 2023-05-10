@@ -1,0 +1,7 @@
+m,n= int(input()),int(input())
+prod_mn=m*n
+while(n>0):
+    rem=m%n
+    m=n
+    n=rem
+print(f"HCF={m} LCM={prod_mn//m}")
