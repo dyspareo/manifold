@@ -1,0 +1,13 @@
+for num in range(2,1001):
+    if(num ==1):
+        print("not prime number")
+    else:
+        for i in range(1,num):
+            if(num%i==0):
+                flag=1
+            else:
+                flag=0
+    if (flag==1):
+        print(i,"not prime number\n")
+    else:
+        print(i,"prime number\n")
