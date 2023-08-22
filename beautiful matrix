@@ -1,0 +1,26 @@
+#A beautiful matrix is a matrix in which the sum of elements in each row and column is equal. Given a square matrix of size NxN. Find the minimum number of operation(s) that are required to make the matrix beautiful. In one operation you can increment the value of any one cell by 1.
+
+#User function Template for python3
+
+# User function Template for python3
+
+class Solution:
+    def findMinOpeartion(self, matrix, n):
+        total = sum(sum(x for x in row) for row in matrix)
+        row_max = max(sum(x for x in row) for row in matrix)
+        col_max = max(sum(row[i] for row in matrix) for i in range(len(matrix)))
+        return max(row_max, col_max) * len(matrix) - total
+
+        
+
+#{ 
+ # Driver Code Starts
+
+#Initial Template for Python 3
+
+for _ in range(int(input())):
+    n = int(input())
+    matrix = [list(map(int,input().split())) for _ in range(n)]
+    ob = Solution()
+    print(ob.findMinOpeartion(matrix, n))
+# } Driver Code Ends
