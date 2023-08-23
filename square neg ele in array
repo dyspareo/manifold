@@ -1,0 +1,10 @@
+#Square the negative elements in an array
+import math
+a=[-1,2,3,-4,16,-91,2,43]
+s=[]
+for r in a:
+    if r < 0:
+        r=r**2
+    s.append(r)
+print(s)
+        
