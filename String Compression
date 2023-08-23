@@ -1,0 +1,18 @@
+class Solution:
+    def compress(self, chars: List[str]) -> int:
+        count = 1
+        compressed = []
+        for i in range(len(chars) - 1):
+            if chars[i] == chars[i+1]:
+                count += 1
+            else:
+                compressed.append(chars[i])
+                if count > 1:
+                    compressed.extend(list(str(count)))
+                    count=1
+        compressed.append(chars[-1])
+        if count > 1:
+            compressed.extend(list(str(count)))
+            count=1
+        chars[:]=compressed
+        return len(chars)
