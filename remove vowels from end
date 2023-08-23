@@ -1,0 +1,9 @@
+#remove vowels from the end
+s="HeLLoWorLD"
+vow="AEIOUaeiou"
+result=""
+for i in range(len(s)-1,-1,-1):
+    if s[i] not in vow:
+        result+=s[i]
+print(result)
+        
