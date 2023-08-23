@@ -1,0 +1,9 @@
+#count of perfect squares in an integer array
+import math
+a=[16, 5, 9, 25, 10, 36, 7, 4, 49]
+count=0
+for r in a:
+    if math.sqrt(r).is_integer():
+        count+=1
+print(count)
+        
