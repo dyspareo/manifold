@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'DEC_ROM' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts INTEGER n as parameter.
+#
+
+def DEC_ROM(n):
+    num=[1,4,5,9,10,40,50,90,100,400,500,900,1000]
+    sym=["I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"]
+    r_num=""
+    for i in range((len(num)-1),-1,-1):
+        qou=n//num[i]
+        for j in range(qou):
+            r_num+=sym[i]
+        n=n%num[i]
+    return r_num
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    str_1 = DEC_ROM(n)
+
+    fptr.write(str_1 + '\n')
+
+    fptr.close()
