@@ -1,0 +1,33 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'FIBONACCI' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER n as parameter.
+#
+
+def FIBONACCI(n):
+    a=0;b=1
+    for i in range(1,n+1):
+        c=a+b
+        a=b
+        b=c
+    return a
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    n_fibo = FIBONACCI(n)
+
+    fptr.write(str(n_fibo) + '\n')
+
+    fptr.close()
